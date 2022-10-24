@@ -1,7 +1,7 @@
 [
   {
     "PublishingHouseId": 2,
-    "Title": "Name!",
+    "Name": "Підручник. Алгебра 8",
     "PublishingHouse": {
       "Id": 2,
       "Name": "ГІМНАЗІЯ",
@@ -10,7 +10,7 @@
   },
   {
     "PublishingHouseId": 1,
-    "Title": "Name!",
+    "Name": "Щоденник нейрохірурга",
     "PublishingHouse": {
       "Id": 1,
       "Name": "Видавництво старого лева",
@@ -19,7 +19,7 @@
   },
   {
     "PublishingHouseId": 2,
-    "Title": "Name!",
+    "Name": "Підручник. Алгебра 9",
     "PublishingHouse": {
       "Id": 2,
       "Name": "ГІМНАЗІЯ",

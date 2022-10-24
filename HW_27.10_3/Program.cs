@@ -7,9 +7,9 @@ var books = new List<Book>();
 var PublishingHouse_1 = new PublishingHouse(1, "Видавництво старого лева", "Адреса 1");
 var PublishingHouse_2 = new PublishingHouse(2, "ГІМНАЗІЯ", "Адреса 2");
 
-var first = new Book(PublishingHouse_2);
-var second = new Book(PublishingHouse_1);
-var third = new Book(PublishingHouse_2);
+var first = new Book("Підручник. Алгебра 8", PublishingHouse_2);
+var second = new Book("Щоденник нейрохірурга", PublishingHouse_1);
+var third = new Book("Підручник. Алгебра 9", PublishingHouse_2);
 
 books.Add(first);
 books.Add(second);
@@ -18,7 +18,6 @@ books.Add(third);
 var options = new JsonSerializerOptions
 {
     Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic),
-    IgnoreReadOnlyProperties = false,
     WriteIndented = true
 };
 
@@ -32,13 +31,15 @@ using (FileStream fs = new FileStream(path, FileMode.Create))
 
 public class Book
 {
-    public Book(PublishingHouse house)
+    public Book(string title, PublishingHouse house)
     {
+        Title = title;
         PublishingHouse = house;
         PublishingHouseId = house.Id;
     }
     public int PublishingHouseId { get; set; }
-    public string Title { get; set; } = "Name";
+    [JsonPropertyName("Name")]
+    public string Title { get; set; }
     public PublishingHouse PublishingHouse { get; set; }
 }
 
